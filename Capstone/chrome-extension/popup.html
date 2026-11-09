@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>PhishShield Inspector</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-page: #f8f9fa;
+      --bg-surface: #ffffff;
+      --bg-subtle: #f1f3f5;
+      --bg-inset: #e9ecef;
+      --border-subtle: #e5e7eb;
+      --border-strong: #d1d5db;
+      --border-dark: #111827;
+      --text-ink: #111827;
+      --text-body: #374151;
+      --text-muted: #6b7280;
+      --text-faint: #9ca3af;
+      --accent: #15803d;
+      --accent-hover: #14532d;
+      --accent-subtle: #f0fdf4;
+      --safe: #16a34a;
+      --safe-bg: #f0fdf4;
+      --safe-border: #bbf7d0;
+      --warn: #d97706;
+      --warn-bg: #fffbeb;
+      --warn-border: #fde68a;
+      --danger: #dc2626;
+      --danger-bg: #fef2f2;
+      --danger-border: #fecaca;
+      --font-serif: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      --font-mono: 'JetBrains Mono', 'SFMono-Regular', Menlo, Monaco, Consolas, monospace;
+      --radius-xs: 3px;
+      --radius-sm: 5px;
+      --radius: 8px;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg-page: #111213;
+        --bg-surface: #18191b;
+        --bg-subtle: #202225;
+        --bg-inset: #292b2e;
+        --border-subtle: #26282a;
+        --border-strong: #383b3e;
+        --border-dark: #f4f4f5;
+        --text-ink: #f4f4f5;
+        --text-body: #d1d5db;
+        --text-muted: #9ca3af;
+        --text-faint: #6b7280;
+        --accent: #22c55e;
+        --accent-hover: #4ade80;
+        --accent-subtle: #052e16;
+        --safe: #22c55e;
+        --safe-bg: #052e16;
+        --safe-border: #14532d;
+        --warn: #f59e0b;
+        --warn-bg: #451a03;
+        --warn-border: #78350f;
+        --danger: #ef4444;
+        --danger-bg: #450a0a;
+        --danger-border: #7f1d1d;
+      }
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      width: 360px;
+      background-color: var(--bg-page);
+      color: var(--text-body);
+      font-family: var(--font-sans);
+      font-size: 13px;
+      line-height: 1.5;
+      padding: 16px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Masthead */
+    .masthead {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid var(--border-subtle);
+      padding-bottom: 12px;
+      margin-bottom: 14px;
+    }
+
+    .brand-group {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .brand-title {
+      font-family: var(--font-serif);
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--text-ink);
+      line-height: 1.1;
+      letter-spacing: -0.01em;
+    }
+
+    .brand-subtitle {
+      font-size: 9.5px;
+      font-weight: 700;
+      color: var(--text-muted);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      line-height: 1;
+      margin-top: 2px;
+    }
+
+    .engine-status {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 11px;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+
+    .status-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--safe);
+      display: inline-block;
+    }
+
+    /* Active Target Card */
+    .target-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-sm);
+      padding: 10px 12px;
+      margin-bottom: 12px;
+    }
+
+    .target-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 6px;
+    }
+
+    .target-label {
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--text-muted);
+    }
+
+    .protocol-tag {
+      font-family: var(--font-mono);
+      font-size: 9.5px;
+      font-weight: 700;
+      padding: 2px 5px;
+      border-radius: var(--radius-xs);
+      text-transform: uppercase;
+    }
+    .protocol-https {
+      background: var(--safe-bg);
+      color: var(--safe);
+      border: 1px solid var(--safe-border);
+    }
+    .protocol-http {
+      background: var(--danger-bg);
+      color: var(--danger);
+      border: 1px solid var(--danger-border);
+    }
+
+    .url-display {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--text-ink);
+      word-break: break-all;
+      max-height: 48px;
+      overflow-y: auto;
+      line-height: 1.4;
+    }
+
+    /* Rectangular Action Button */
+    .btn-action {
+      width: 100%;
+      background: var(--accent);
+      color: #ffffff;
+      border: 1px solid var(--accent);
+      border-radius: var(--radius-sm);
+      padding: 9px 14px;
+      font-family: var(--font-sans);
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.01em;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      transition: background-color 0.15s ease;
+    }
+    .btn-action:hover:not(:disabled) {
+      background: var(--accent-hover);
+    }
+    .btn-action:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+    }
+
+    /* Minimal Loader */
+    .loader-box {
+      display: none;
+      text-align: center;
+      padding: 14px;
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+    .spinner {
+      width: 14px;
+      height: 14px;
+      border: 2px solid var(--border-strong);
+      border-top-color: var(--accent);
+      border-radius: 50%;
+      animation: spin 0.6s linear infinite;
+      display: inline-block;
+      vertical-align: middle;
+      margin-right: 6px;
+    }
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
+    /* Diagnostic Result Section */
+    .result-section {
+      display: none;
+      margin-top: 14px;
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius);
+      padding: 14px;
+    }
+
+    .result-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 12px;
+      border-bottom: 1px solid var(--border-subtle);
+      padding-bottom: 10px;
+    }
+
+    .score-group {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .score-num {
+      font-family: var(--font-serif);
+      font-size: 28px;
+      font-weight: 700;
+      line-height: 1;
+      color: var(--text-ink);
+    }
+
+    .score-label {
+      font-size: 10px;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-top: 3px;
+      font-weight: 600;
+    }
+
+    /* Categorical Badge: Strictly Rectangular */
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      padding: 3px 8px;
+      font-size: 10.5px;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      border-radius: var(--radius-xs);
+    }
+    .badge-safe {
+      background: var(--safe-bg);
+      color: var(--safe);
+      border: 1px solid var(--safe-border);
+    }
+    .badge-warn {
+      background: var(--warn-bg);
+      color: var(--warn);
+      border: 1px solid var(--warn-border);
+    }
+    .badge-danger {
+      background: var(--danger-bg);
+      color: var(--danger);
+      border: 1px solid var(--danger-border);
+    }
+
+    .meter-track {
+      height: 4px;
+      background: var(--bg-inset);
+      border-radius: 2px;
+      overflow: hidden;
+      margin: 10px 0 12px;
+    }
+    .meter-fill {
+      height: 100%;
+      border-radius: 2px;
+      transition: width 0.4s ease;
+    }
+
+    .confidence-meta {
+      font-size: 11.5px;
+      color: var(--text-muted);
+      margin-bottom: 12px;
+    }
+
+    /* SHAP Reasons List */
+    .reasons-title {
+      font-size: 10.5px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--text-muted);
+      margin-bottom: 8px;
+    }
+
+    .reasons-list {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      list-style: none;
+    }
+
+    .reasons-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      background: var(--bg-subtle);
+      border-radius: var(--radius-xs);
+      padding: 7px 10px;
+      font-size: 11.5px;
+      line-height: 1.4;
+      color: var(--text-ink);
+      border-left: 2px solid var(--accent);
+    }
+
+    .reason-tag {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      font-weight: 700;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    /* Extension Drawer Footer */
+    .extension-footer {
+      margin-top: 14px;
+      padding-top: 10px;
+      border-top: 1px solid var(--border-subtle);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 10.5px;
+      color: var(--text-muted);
+    }
+
+    .console-link {
+      background: transparent;
+      border: none;
+      font-family: var(--font-sans);
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--accent);
+      cursor: pointer;
+      text-decoration: underline;
+      text-underline-offset: 2px;
+      padding: 0;
+    }
+    .console-link:hover {
+      color: var(--accent-hover);
+    }
+
+    .error-card {
+      margin-top: 12px;
+      padding: 10px 12px;
+      background: var(--danger-bg);
+      border: 1px solid var(--danger-border);
+      border-radius: var(--radius-sm);
+      font-size: 11.5px;
+      color: var(--danger);
+      display: none;
+      line-height: 1.4;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Masthead -->
+  <header class="masthead">
+    <div class="brand-group">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+      </svg>
+      <div>
+        <div class="brand-title">PhishShield</div>
+        <div class="brand-subtitle">URL Threat Inspection</div>
+      </div>
+    </div>
+    <div class="engine-status">
+      <span class="status-dot"></span>
+      <span>API Ready</span>
+    </div>
+  </header>
+
+  <!-- Active Target Card -->
+  <div class="target-card">
+    <div class="target-header">
+      <span class="target-label">Active Browser Tab</span>
+      <span id="protocol-badge" class="protocol-tag protocol-https">HTTPS</span>
+    </div>
+    <div id="url-box" class="url-display">Detecting active tab...</div>
+  </div>
+
+  <!-- Primary Scan Action Button -->
+  <button id="scan-btn" class="btn-action">
+    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+      <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+    </svg>
+    Inspect Page Security
+  </button>
+
+  <!-- Error Alert Box -->
+  <div id="error-box" class="error-card"></div>
+
+  <!-- Progress Loader -->
+  <div id="loader" class="loader-box">
+    <span class="spinner"></span>
+    Extracting DOM and running Random Forest evaluation...
+  </div>
+
+  <!-- Diagnostic Result Section -->
+  <div id="result-box" class="result-section">
+    <div class="result-header">
+      <div class="score-group">
+        <div id="threat-score" class="score-num">0</div>
+        <div class="score-label">Risk Index (0 - 100)</div>
+      </div>
+      <span id="threat-badge" class="badge badge-safe">Legitimate</span>
+    </div>
+
+    <!-- Meter Bar -->
+    <div class="meter-track">
+      <div id="meter-fill" class="meter-fill" style="width: 0%; background: var(--safe);"></div>
+    </div>
+
+    <div id="confidence-text" class="confidence-meta">
+      Confidence: 100.0% (Very Safe)
+    </div>
+
+    <!-- SHAP Reasons List -->
+    <div class="reasons-title">SHAP Feature Attribution Ledger</div>
+    <ul id="reasons-list" class="reasons-list">
+      <li>
+        <span class="reason-tag" style="color: var(--safe);">PASS</span>
+        <span>No malicious indicators detected.</span>
+      </li>
+    </ul>
+  </div>
+
+  <!-- Footer -->
+  <footer class="extension-footer">
+    <span>PhiUSIIL 41-Feature Model</span>
+    <button id="open-console-btn" class="console-link">Open Web Console</button>
+  </footer>
+
+  <script src="popup.js"></script>
+</body>
+</html>
