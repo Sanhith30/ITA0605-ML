@@ -1,0 +1,8 @@
+case,noise,overheating,pressure,solution
+C1,Yes,No,Low,Replace seal
+C2,No,Yes,Normal,Clean cooling fins
+C3,Yes,Yes,High,Reduce load and inspect bearing
+C4,No,No,Low,Refill lubricant
+C5,Yes,No,Normal,Tighten mounting
+C6,No,Yes,High,Replace coolant pump
+C7,Yes,Yes,Low,Inspect bearing and verify low-pressure condition before adjusting load

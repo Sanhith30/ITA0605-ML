@@ -1,0 +1,11 @@
+{
+  "objective_preset": "Increase mean validation accuracy by at least 0.05 vs 22D baseline; reduce used features from 22 to 2.",
+  "baseline_mean_validation_accuracy": 0.7383333333333333,
+  "redesigned_mean_validation_accuracy": 0.9383333333333334,
+  "gain": 0.20000000000000007,
+  "met_accuracy_objective": true,
+  "baseline_features": 22,
+  "redesign_features": 2,
+  "seed_count": 3,
+  "selection_rule": "training-only mutual information, top two"
+}

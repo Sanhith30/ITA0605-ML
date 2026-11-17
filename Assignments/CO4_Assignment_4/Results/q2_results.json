@@ -1,0 +1,36 @@
+{
+  "k": 15,
+  "vote": "distance",
+  "best_scaled": {
+    "scaled": true,
+    "k": 15,
+    "validation_accuracy": 0.925
+  },
+  "best_unscaled": {
+    "scaled": false,
+    "k": 15,
+    "validation_accuracy": 0.745
+  },
+  "seed_summary": [
+    {
+      "vote": "uniform",
+      "mean_accuracy": 0.9366666666666666,
+      "sd_accuracy": 0.010408329997330611,
+      "min_accuracy": 0.925,
+      "max_accuracy": 0.945
+    },
+    {
+      "vote": "distance",
+      "mean_accuracy": 0.9383333333333334,
+      "sd_accuracy": 0.02565800719723438,
+      "min_accuracy": 0.91,
+      "max_accuracy": 0.96
+    }
+  ],
+  "test_accuracy": 0.905,
+  "train_n": 600,
+  "validation_n": 200,
+  "test_n": 200,
+  "seed": 17,
+  "noise_rate": 0.06
+}

@@ -1,0 +1,7 @@
+case,normal_score,double_overheat_score,solution
+C1,0.6,0.4285714285714286,Replace seal
+C2,0.55,0.6785714285714287,Clean cooling fins
+C3,0.7,0.7857142857142858,Reduce load and inspect bearing
+C4,0.3,0.2142857142857143,Refill lubricant
+C5,0.44999999999999996,0.3214285714285714,Tighten mounting
+C6,0.4,0.5714285714285715,Replace coolant pump

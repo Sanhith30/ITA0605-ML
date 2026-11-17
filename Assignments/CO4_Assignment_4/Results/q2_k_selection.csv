@@ -1,0 +1,15 @@
+scaled,k,validation_accuracy
+False,1,0.655
+False,3,0.685
+False,5,0.69
+False,7,0.685
+False,9,0.7
+False,15,0.745
+False,25,0.725
+True,1,0.88
+True,3,0.915
+True,5,0.905
+True,7,0.92
+True,9,0.92
+True,15,0.925
+True,25,0.895

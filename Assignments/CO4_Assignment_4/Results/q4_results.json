@@ -1,0 +1,21 @@
+{
+  "best": {
+    "centres": 10,
+    "width_factor": 0.75,
+    "sigma": 0.6616222382489784,
+    "train_accuracy": 0.93,
+    "validation_accuracy": 0.945,
+    "parameters": 32
+  },
+  "rbf_test_accuracy": 0.94,
+  "knn_recipe_from_q2": {
+    "k": 15,
+    "vote": "distance"
+  },
+  "knn_validation_accuracy_on_moons": 0.915,
+  "knn_test_accuracy_on_moons": 0.935,
+  "n_train": 600,
+  "n_validation": 200,
+  "n_test": 200,
+  "seed": 71
+}

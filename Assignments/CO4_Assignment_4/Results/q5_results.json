@@ -1,0 +1,80 @@
+{
+  "query": {
+    "noise": "Yes",
+    "overheating": "Yes",
+    "pressure": "Low"
+  },
+  "normal_ranking": [
+    {
+      "case": "C3",
+      "similarity": 0.7,
+      "solution": "Reduce load and inspect bearing"
+    },
+    {
+      "case": "C1",
+      "similarity": 0.6,
+      "solution": "Replace seal"
+    },
+    {
+      "case": "C2",
+      "similarity": 0.55,
+      "solution": "Clean cooling fins"
+    },
+    {
+      "case": "C5",
+      "similarity": 0.44999999999999996,
+      "solution": "Tighten mounting"
+    },
+    {
+      "case": "C6",
+      "similarity": 0.4,
+      "solution": "Replace coolant pump"
+    },
+    {
+      "case": "C4",
+      "similarity": 0.3,
+      "solution": "Refill lubricant"
+    }
+  ],
+  "doubled_weight_ranking": [
+    {
+      "case": "C3",
+      "similarity": 0.7857142857142858,
+      "solution": "Reduce load and inspect bearing"
+    },
+    {
+      "case": "C2",
+      "similarity": 0.6785714285714287,
+      "solution": "Clean cooling fins"
+    },
+    {
+      "case": "C6",
+      "similarity": 0.5714285714285715,
+      "solution": "Replace coolant pump"
+    },
+    {
+      "case": "C1",
+      "similarity": 0.4285714285714286,
+      "solution": "Replace seal"
+    },
+    {
+      "case": "C5",
+      "similarity": 0.3214285714285714,
+      "solution": "Tighten mounting"
+    },
+    {
+      "case": "C4",
+      "similarity": 0.2142857142857143,
+      "solution": "Refill lubricant"
+    }
+  ],
+  "proposed_adaptation": "Inspect bearing and verify low-pressure condition before adjusting load",
+  "retained_as_C7_example": {
+    "case": "C7",
+    "noise": "Yes",
+    "overheating": "Yes",
+    "pressure": "Low",
+    "solution": "Inspect bearing and verify low-pressure condition before adjusting load"
+  },
+  "retention_requires_verification": true
+}

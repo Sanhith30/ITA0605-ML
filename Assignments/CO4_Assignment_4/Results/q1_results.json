@@ -1,0 +1,111 @@
+{
+  "euclidean_k1": {
+    "class": "Worn",
+    "ranking": [
+      "P4",
+      "P3",
+      "P5",
+      "P6",
+      "P7",
+      "P1",
+      "P2",
+      "P8"
+    ],
+    "selected": [
+      "P4"
+    ],
+    "votes": {
+      "Normal": 0,
+      "Worn": 1
+    }
+  },
+  "euclidean_k3": {
+    "class": "Worn",
+    "ranking": [
+      "P4",
+      "P3",
+      "P5",
+      "P6",
+      "P7",
+      "P1",
+      "P2",
+      "P8"
+    ],
+    "selected": [
+      "P4",
+      "P3",
+      "P5"
+    ],
+    "votes": {
+      "Normal": 1,
+      "Worn": 2
+    }
+  },
+  "euclidean_k5": {
+    "class": "Worn",
+    "ranking": [
+      "P4",
+      "P3",
+      "P5",
+      "P6",
+      "P7",
+      "P1",
+      "P2",
+      "P8"
+    ],
+    "selected": [
+      "P4",
+      "P3",
+      "P5",
+      "P6",
+      "P7"
+    ],
+    "votes": {
+      "Normal": 2,
+      "Worn": 3
+    }
+  },
+  "manhattan_k3": {
+    "class": "Worn",
+    "ranking": [
+      "P4",
+      "P3",
+      "P6",
+      "P5",
+      "P7",
+      "P1",
+      "P2",
+      "P8"
+    ],
+    "selected": [
+      "P4",
+      "P3",
+      "P6"
+    ],
+    "votes": {
+      "Normal": 1,
+      "Worn": 2
+    }
+  },
+  "second_query": {
+    "point": [
+      1.2,
+      4.6
+    ],
+    "k_predictions": {
+      "1": "Normal",
+      "3": "Normal",
+      "5": "Worn"
+    },
+    "ranked_neighbours": [
+      "P3",
+      "P1",
+      "P4",
+      "P5",
+      "P6",
+      "P2",
+      "P8",
+      "P7"
+    ]
+  }
+}

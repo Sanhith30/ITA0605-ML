@@ -1,0 +1,19 @@
+seed,flip_rate,model,validation_accuracy
+17,0.0,k-NN,0.915
+17,0.0,Polynomial logistic regression,0.91
+17,0.1,k-NN,0.89
+17,0.1,Polynomial logistic regression,0.92
+17,0.2,k-NN,0.825
+17,0.2,Polynomial logistic regression,0.87
+29,0.0,k-NN,0.925
+29,0.0,Polynomial logistic regression,0.945
+29,0.1,k-NN,0.865
+29,0.1,Polynomial logistic regression,0.935
+29,0.2,k-NN,0.845
+29,0.2,Polynomial logistic regression,0.935
+41,0.0,k-NN,0.955
+41,0.0,Polynomial logistic regression,0.96
+41,0.1,k-NN,0.91
+41,0.1,Polynomial logistic regression,0.945
+41,0.2,k-NN,0.825
+41,0.2,Polynomial logistic regression,0.955

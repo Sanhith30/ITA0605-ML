@@ -1,0 +1,91 @@
+{
+  "manual": {
+    "xq": 3.5,
+    "tau": 1,
+    "weights": [
+      0.04393693362340741,
+      0.32465246735834974,
+      0.8824969025845953,
+      0.8824969025845953,
+      0.32465246735834974
+    ],
+    "XtwX": [
+      [
+        2.4582356735092974,
+        8.493982523224023
+      ],
+      [
+        8.493982523224023,
+        31.52128105163043
+      ]
+    ],
+    "Xtwy": [
+      8.720880587150504,
+      32.45326849379624
+    ],
+    "theta": [
+      -0.14312935460409268,
+      1.0681357358292458
+    ],
+    "local_prediction": 3.5953457207982678,
+    "global_theta": [
+      -0.03999999999999897,
+      1.0599999999999998
+    ],
+    "global_prediction": 3.6700000000000004
+  },
+  "rows": [
+    {
+      "model": "LWR",
+      "bandwidth": 0.07,
+      "train_mse": 0.007143547805209122,
+      "validation_mse": 0.05976873177877501,
+      "prediction_ms_for_100_queries": 2.181286999984877
+    },
+    {
+      "model": "LWR",
+      "bandwidth": 0.3,
+      "train_mse": 0.02365657027246257,
+      "validation_mse": 0.039131965108326935,
+      "prediction_ms_for_100_queries": 1.8706279999491926
+    },
+    {
+      "model": "LWR",
+      "bandwidth": 0.8,
+      "train_mse": 0.05615714879565247,
+      "validation_mse": 0.06243523906522782,
+      "prediction_ms_for_100_queries": 2.237089000004744
+    },
+    {
+      "model": "LWR",
+      "bandwidth": 2.0,
+      "train_mse": 0.30130999942905873,
+      "validation_mse": 0.24924974975186692,
+      "prediction_ms_for_100_queries": 2.2583830000257876
+    },
+    {
+      "model": "LWR",
+      "bandwidth": 20.0,
+      "train_mse": 0.5419221841325192,
+      "validation_mse": 0.3896963603815453,
+      "prediction_ms_for_100_queries": 1.993051999988893
+    },
+    {
+      "model": "Global linear",
+      "bandwidth": NaN,
+      "train_mse": 0.5455012511460806,
+      "validation_mse": 0.39321395628707023,
+      "prediction_ms_for_100_queries": 0.005176999991363118
+    },
+    {
+      "model": "Polynomial degree 5",
+      "bandwidth": NaN,
+      "train_mse": 0.04811703890332332,
+      "validation_mse": 0.09005541164453695,
+      "prediction_ms_for_100_queries": 0.00941400003284798
+    }
+  ],
+  "seed": 73,
+  "n_train": 75,
+  "n_validation": 25
+}
