@@ -1,0 +1,14 @@
+Machine_ID,Line,Installed_Year,Supervisor
+M01,A,2015,Meena
+M02,A,2020,Devi
+M03,A,2011,Meena
+M04,A,2017,Devi
+M05,B,2015,Meena
+M06,B,2022,Ravi
+M07,B,2024,Devi
+M08,B,2007,Kumar
+M09,C,2013,Devi
+M10,C,2016,Meena
+M11,C,2012,Kumar
+M12,C,2021,Ravi
+M14,C,2014,Devi

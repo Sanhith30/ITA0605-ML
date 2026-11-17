@@ -1,0 +1,186 @@
+{
+  "seed": 20260503,
+  "sample_initial_rows": 7,
+  "sample_exact_duplicates": 1,
+  "sample_missing_before": {
+    "Machine_ID": 0,
+    "Date": 0,
+    "Line": 0,
+    "Output_Units": 1,
+    "Defects": 1
+  },
+  "sample_dtypes": {
+    "Machine_ID": "object",
+    "Date": "datetime64[ns]",
+    "Line": "object",
+    "Output_Units": "float64",
+    "Defects": "float64"
+  },
+  "sample_shape": [
+    7,
+    5
+  ],
+  "sample_drop_rows": 4,
+  "sample_fill_rows": 6,
+  "sample_cleaned": [
+    {
+      "Machine_ID": "M01",
+      "Date": "2026-03-01T00:00:00",
+      "Line": "A",
+      "Output_Units": 480.0,
+      "Defects": 12.0,
+      "Defect_Rate": 0.025
+    },
+    {
+      "Machine_ID": "M02",
+      "Date": "2026-03-01T00:00:00",
+      "Line": "A",
+      "Output_Units": 455.0,
+      "Defects": 9.0,
+      "Defect_Rate": 0.01978021978021978
+    },
+    {
+      "Machine_ID": "M03",
+      "Date": "2026-03-01T00:00:00",
+      "Line": "B",
+      "Output_Units": 510.0,
+      "Defects": 15.0,
+      "Defect_Rate": 0.029411764705882353
+    },
+    {
+      "Machine_ID": "M01",
+      "Date": "2026-03-02T00:00:00",
+      "Line": "A",
+      "Output_Units": 492.0,
+      "Defects": 9.0,
+      "Defect_Rate": 0.018292682926829267
+    },
+    {
+      "Machine_ID": "M02",
+      "Date": "2026-03-02T00:00:00",
+      "Line": "A",
+      "Output_Units": 455.0,
+      "Defects": 9.0,
+      "Defect_Rate": 0.01978021978021978
+    },
+    {
+      "Machine_ID": "M03",
+      "Date": "2026-03-02T00:00:00",
+      "Line": "B",
+      "Output_Units": 510.0,
+      "Defects": 14.0,
+      "Defect_Rate": 0.027450980392156862
+    }
+  ],
+  "sample_column_selection": [
+    {
+      "Machine_ID": "M01",
+      "Output_Units": 480.0
+    },
+    {
+      "Machine_ID": "M02",
+      "Output_Units": 455.0
+    },
+    {
+      "Machine_ID": "M03",
+      "Output_Units": 510.0
+    },
+    {
+      "Machine_ID": "M01",
+      "Output_Units": 492.0
+    },
+    {
+      "Machine_ID": "M02",
+      "Output_Units": 455.0
+    },
+    {
+      "Machine_ID": "M03",
+      "Output_Units": 510.0
+    }
+  ],
+  "sample_loc": [
+    {
+      "Date": "2026-03-01T00:00:00",
+      "Defects": 9.0
+    },
+    {
+      "Date": "2026-03-02T00:00:00",
+      "Defects": 9.0
+    }
+  ],
+  "sample_iloc": [
+    {
+      "Machine_ID": "M01",
+      "Date": "2026-03-01",
+      "Line": "A"
+    },
+    {
+      "Machine_ID": "M02",
+      "Date": "2026-03-01",
+      "Line": "A"
+    }
+  ],
+  "sample_boolean": [
+    {
+      "Machine_ID": "M01",
+      "Date": "2026-03-01T00:00:00",
+      "Output_Units": 480.0
+    },
+    {
+      "Machine_ID": "M01",
+      "Date": "2026-03-02T00:00:00",
+      "Output_Units": 492.0
+    }
+  ],
+  "sample_multiindex_names": [
+    "Machine_ID",
+    "Date"
+  ],
+  "production_raw_rows": 1012,
+  "production_target_clean_rows": 1000,
+  "raw_nulls": {
+    "Machine_ID": 0,
+    "Date": 0,
+    "Shift": 0,
+    "Line": 0,
+    "Output_Units": 31,
+    "Defects": 24
+  },
+  "production_clean_log": {
+    "raw_rows": 1012,
+    "duplicate_rows_removed": 12,
+    "line_values_standardised": 35,
+    "output_values_filled": 30,
+    "defect_values_filled": 24,
+    "cleaned_rows": 1000,
+    "conflicting_keys": 0
+  },
+  "roundtrip_csv_equal": true,
+  "roundtrip_json_equal": true,
+  "production_clean_rows_by_line": [
+    {
+      "Line": "A",
+      "Rows": 300,
+      "Mean_Rate": 0.018864574813322748
+    },
+    {
+      "Line": "B",
+      "Rows": 326,
+      "Mean_Rate": 0.018051323759422755
+    },
+    {
+      "Line": "C",
+      "Rows": 374,
+      "Mean_Rate": 0.04070487632825499
+    }
+  ],
+  "production_column_types": {
+    "Machine_ID": "object",
+    "Date": "datetime64[ns]",
+    "Shift": "object",
+    "Line": "object",
+    "Output_Units": "int32",
+    "Defects": "int32",
+    "Defect_Rate": "float64"
+  }
+}

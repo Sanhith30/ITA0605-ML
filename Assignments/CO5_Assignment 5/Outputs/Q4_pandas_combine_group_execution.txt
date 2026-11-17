@@ -1,0 +1,64 @@
+Q4 MACHINE_INFO
+ Machine_ID Line  Installed_Year Supervisor
+       M01    A            2015      Meena
+       M02    A            2020       Devi
+       M03    A            2011      Meena
+       M04    A            2017       Devi
+       M05    B            2015      Meena
+       M06    B            2022       Ravi
+       M07    B            2024       Devi
+       M08    B            2007      Kumar
+       M09    C            2013       Devi
+       M10    C            2016      Meena
+       M11    C            2012      Kumar
+       M12    C            2021       Ravi
+       M14    C            2014       Devi
+MERGE COMPARISON {'inner': {'rows': 924, 'indicator': {'both': 924, 'left_only': 0, 'right_only': 0}, 'unique_machines': 12}, 'left': {'rows': 1000, 'indicator': {'both': 924, 'left_only': 76, 'right_only': 0}, 'unique_machines': 13}, 'outer': {'rows': 1001, 'indicator': {'both': 924, 'left_only': 76, 'right_only': 1}, 'unique_machines': 14}}
+CONCAT MARCH/APRIL 523 477 -> 1000 no missing or extra keys
+GROUP BY LINE
+ Line  Total_Output  Mean_Defect_Rate  Maximum_Defects  Record_Count
+   A        142099          0.018865               18           300
+   B        152086          0.018051               18           326
+   C        176890          0.040705               66           374
+GROUP BY MACHINE
+ Machine_ID  Total_Output  Mean_Defect_Rate  Maximum_Defects  Record_Count
+       M01         34260          0.018828               18            75
+       M02         35069          0.018709               18            75
+       M03         36699          0.019241               18            76
+       M04         36071          0.018673               18            74
+       M05         35055          0.017144               16            78
+       M06         38584          0.018224               16            83
+       M07         38359          0.018459               17            82
+       M08         40088          0.018329               18            83
+       M09         34704          0.025303               21            70
+       M10         33361          0.025515               21            73
+       M11         35749          0.025920               21            78
+       M12         36767          0.025140               21            77
+       M13         36309          0.100424               66            76
+PIVOT LINE x SHIFT
+ Shift       Day     Night
+Line                     
+A      0.015877  0.021735
+B      0.015763  0.020312
+C      0.037036  0.044258
+OVERALL RATE 0.02676772773633601 HIGH MACHINES ['M13']
+TOP 5
+ Machine_ID  Total_Output  Mean_Defect_Rate  Maximum_Defects  Record_Count
+       M13         36309          0.100424               66            76
+       M11         35749          0.025920               21            78
+       M10         33361          0.025515               21            73
+       M09         34704          0.025303               21            70
+       M12         36767          0.025140               21            77
+BOTTOM 5
+ Machine_ID  Total_Output  Mean_Defect_Rate  Maximum_Defects  Record_Count
+       M04         36071          0.018673               18            74
+       M07         38359          0.018459               17            82
+       M08         40088          0.018329               18            83
+       M06         38584          0.018224               16            83
+       M05         35055          0.017144               16            78
+STABLE SORT TIED KEYS RETAIN ['B', 'A', 'C']
+EFFECT OF INNER JOIN: KEEP VS DROP UNMATCHED
+ Line  Keep_All_Production  Drop_Unmatched  Difference_pp
+   A             0.018865        0.018865       0.000000
+   B             0.018051        0.018051       0.000000
+   C             0.040705        0.025474       1.523042

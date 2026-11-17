@@ -1,0 +1,44 @@
+Q3 GIVEN SAMPLE BEFORE
+ Machine_ID       Date Line  Output_Units  Defects
+       M01 2026-03-01    A         480.0     12.0
+       M02 2026-03-01    A         455.0      9.0
+       M03 2026-03-01    B           NaN     15.0
+       M01 2026-03-02    A         492.0      NaN
+       M02 2026-03-02    A         455.0      9.0
+       M02 2026-03-02    A         455.0      9.0
+       M03 2026-03-02    b         510.0     14.0
+Sample shape (7, 5) dtypes {'Machine_ID': dtype('O'), 'Date': dtype('<M8[ns]'), 'Line': dtype('O'), 'Output_Units': dtype('float64'), 'Defects': dtype('float64')} nulls {'Machine_ID': 0, 'Date': 0, 'Line': 0, 'Output_Units': 1, 'Defects': 1}
+Drop strategy rows: 4 fill strategy rows: 6
+SAMPLE CLEANED/IMPUTED
+ Machine_ID       Date Line  Output_Units  Defects  Defect_Rate
+       M01 2026-03-01    A         480.0     12.0     0.025000
+       M02 2026-03-01    A         455.0      9.0     0.019780
+       M03 2026-03-01    B         510.0     15.0     0.029412
+       M01 2026-03-02    A         492.0      9.0     0.018293
+       M02 2026-03-02    A         455.0      9.0     0.019780
+       M03 2026-03-02    B         510.0     14.0     0.027451
+SELECTION BY .loc
+       Date  Defects
+2026-03-01      9.0
+2026-03-02      9.0
+SELECTION BY .iloc
+ Machine_ID       Date Line
+       M01 2026-03-01    A
+       M02 2026-03-01    A
+BOOLEAN SELECTION
+ Machine_ID       Date  Output_Units
+       M01 2026-03-01         480.0
+       M01 2026-03-02         492.0
+MULTIINDEX
+                       Line  Output_Units  Defects  Defect_Rate
+Machine_ID Date                                               
+M01        2026-03-01    A         480.0     12.0     0.025000
+           2026-03-02    A         492.0      9.0     0.018293
+M02        2026-03-01    A         455.0      9.0     0.019780
+           2026-03-02    A         455.0      9.0     0.019780
+M03        2026-03-01    B         510.0     15.0     0.029412
+           2026-03-02    B         510.0     14.0     0.027451
+Q3 1000-RECORD DATA: raw 1012 clean 1000 log: {'raw_rows': 1012, 'duplicate_rows_removed': 12, 'line_values_standardised': 35, 'output_values_filled': 30, 'defect_values_filled': 24, 'cleaned_rows': 1000, 'conflicting_keys': 0}
+Raw missing by column: {'Machine_ID': 0, 'Date': 0, 'Shift': 0, 'Line': 0, 'Output_Units': 31, 'Defects': 24}
+CSV/JSON round trips: EXACT DTYPE, VALUES, DATES MATCH
+Clean column types: {'Machine_ID': 'object', 'Date': 'datetime64[ns]', 'Shift': 'object', 'Line': 'object', 'Output_Units': 'int32', 'Defects': 'int32', 'Defect_Rate': 'float64'}

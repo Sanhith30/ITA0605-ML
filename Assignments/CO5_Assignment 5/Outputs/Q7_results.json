@@ -1,0 +1,34 @@
+{
+  "input_rows": 100000,
+  "repetitions": 3,
+  "predetermined_goals": {
+    "speedup_at_least_10x": 10,
+    "memory_reduction_at_least_30_percent": 30,
+    "statistical_output_equal": true,
+    "accept_tradeoff": "bounded integer ranges and category setup cost"
+  },
+  "baseline_apply_time_ms": [
+    478.26295000004393,
+    470.77074499975424,
+    437.5065280000854
+  ],
+  "redesigned_vectorised_time_ms": [
+    16.865868999957456,
+    16.38739300005909,
+    17.69314300008773
+  ],
+  "baseline_median_ms": 470.77074499975424,
+  "redesigned_median_ms": 16.865868999957456,
+  "speedup_factor": 27.91262904988422,
+  "original_dataframe_bytes": 18701532,
+  "redesigned_dataframe_bytes": 2201836,
+  "memory_reduction_pct": 88.22644048626604,
+  "results_identical": true,
+  "output_sum_identical": true,
+  "defects_sum_identical": true,
+  "objectives_met": true,
+  "figures": [
+    "Q7_redesign_comparison.png",
+    "Q7_redesign_workflow.png"
+  ]
+}

@@ -1,0 +1,103 @@
+{
+  "input_rows": 1012,
+  "clean_rows": 1000,
+  "unchanged_rerun_identical": true,
+  "changed_input": {
+    "Machine_ID": "M03",
+    "Date": "2026-03-07T00:00:00",
+    "Shift": "Day"
+  },
+  "changed_input_units_increment": 50,
+  "original_summary": [
+    {
+      "Line": "A",
+      "Total_Output": 142099,
+      "Mean_Defect_Rate": 0.018864574813322748,
+      "Record_Count": 300
+    },
+    {
+      "Line": "B",
+      "Total_Output": 152086,
+      "Mean_Defect_Rate": 0.018051323759422755,
+      "Record_Count": 326
+    },
+    {
+      "Line": "C",
+      "Total_Output": 176890,
+      "Mean_Defect_Rate": 0.04070487632825499,
+      "Record_Count": 374
+    }
+  ],
+  "modified_summary": [
+    {
+      "Line": "A",
+      "Total_Output": 142149,
+      "Mean_Defect_Rate": 0.01885905376432344,
+      "Record_Count": 300
+    },
+    {
+      "Line": "B",
+      "Total_Output": 152086,
+      "Mean_Defect_Rate": 0.018051323759422755,
+      "Record_Count": 326
+    },
+    {
+      "Line": "C",
+      "Total_Output": 176890,
+      "Mean_Defect_Rate": 0.04070487632825499,
+      "Record_Count": 374
+    }
+  ],
+  "changed_line_statistics": [
+    {
+      "Line": "A",
+      "Total_Output": 50,
+      "Mean_Defect_Rate": -5.521048999309469e-06
+    }
+  ],
+  "checks_caught_examples": {
+    "missing_column": "Input is missing required columns: ['Defects']",
+    "conflicting_production_key": "Duplicate production keys after cleaning: 1",
+    "duplicate_merge_key": "Machine_Info has duplicate Machine_ID keys; merge would multiply rows"
+  },
+  "benchmark_rows": 100000,
+  "benchmark_equivalent_values": true,
+  "benchmark": {
+    "Python_loop": {
+      "time_ms": 118.02750099968762,
+      "peak_allocated_bytes": 4006004,
+      "output_nbytes": 800000
+    },
+    "DataFrame_apply": {
+      "time_ms": 1846.5722790001564,
+      "peak_allocated_bytes": 41844430,
+      "output_nbytes": 800000
+    },
+    "Vectorised": {
+      "time_ms": 0.7329009999921254,
+      "peak_allocated_bytes": 932992,
+      "output_nbytes": 800000
+    }
+  },
+  "original_memory_bytes": 18701532,
+  "optimised_memory_bytes": 2201836,
+  "saved_memory_pct": 88.22644048626604,
+  "original_dtypes": {
+    "Machine_ID": "object",
+    "Date": "datetime64[ns]",
+    "Shift": "object",
+    "Line": "object",
+    "Output_Units": "int64",
+    "Defects": "int64",
+    "Defect_Rate": "float64"
+  },
+  "optimised_dtypes": {
+    "Machine_ID": "category",
+    "Date": "datetime64[ns]",
+    "Shift": "category",
+    "Line": "category",
+    "Output_Units": "int16",
+    "Defects": "int8",
+    "Defect_Rate": "float64"
+  }
+}

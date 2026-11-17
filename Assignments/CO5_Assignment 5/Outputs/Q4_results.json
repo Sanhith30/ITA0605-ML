@@ -1,0 +1,292 @@
+{
+  "seed": 20260504,
+  "production_rows": 1000,
+  "machine_info_rows": 13,
+  "machine_info_without_records": [
+    "M14"
+  ],
+  "production_machine_without_info": [
+    "M13"
+  ],
+  "joins": {
+    "inner": {
+      "rows": 924,
+      "indicator": {
+        "both": 924,
+        "left_only": 0,
+        "right_only": 0
+      },
+      "unique_machines": 12
+    },
+    "left": {
+      "rows": 1000,
+      "indicator": {
+        "both": 924,
+        "left_only": 76,
+        "right_only": 0
+      },
+      "unique_machines": 13
+    },
+    "outer": {
+      "rows": 1001,
+      "indicator": {
+        "both": 924,
+        "left_only": 76,
+        "right_only": 1
+      },
+      "unique_machines": 14
+    }
+  },
+  "march_rows": 523,
+  "april_rows": 477,
+  "concat_rows": 1000,
+  "concat_index_type": "RangeIndex",
+  "concat_columns": [
+    "Machine_ID",
+    "Date",
+    "Shift",
+    "Line",
+    "Output_Units",
+    "Defects",
+    "Defect_Rate"
+  ],
+  "concat_roundtrip_ok": true,
+  "concat_duplicate_keys": 0,
+  "line_groups": [
+    {
+      "Line": "A",
+      "Total_Output": 142099,
+      "Mean_Defect_Rate": 0.018864574813322748,
+      "Maximum_Defects": 18,
+      "Record_Count": 300
+    },
+    {
+      "Line": "B",
+      "Total_Output": 152086,
+      "Mean_Defect_Rate": 0.018051323759422755,
+      "Maximum_Defects": 18,
+      "Record_Count": 326
+    },
+    {
+      "Line": "C",
+      "Total_Output": 176890,
+      "Mean_Defect_Rate": 0.04070487632825499,
+      "Maximum_Defects": 66,
+      "Record_Count": 374
+    }
+  ],
+  "machine_groups": [
+    {
+      "Machine_ID": "M01",
+      "Total_Output": 34260,
+      "Mean_Defect_Rate": 0.01882842567483691,
+      "Maximum_Defects": 18,
+      "Record_Count": 75
+    },
+    {
+      "Machine_ID": "M02",
+      "Total_Output": 35069,
+      "Mean_Defect_Rate": 0.018708510442185244,
+      "Maximum_Defects": 18,
+      "Record_Count": 75
+    },
+    {
+      "Machine_ID": "M03",
+      "Total_Output": 36699,
+      "Mean_Defect_Rate": 0.019241221042166533,
+      "Maximum_Defects": 18,
+      "Record_Count": 76
+    },
+    {
+      "Machine_ID": "M04",
+      "Total_Output": 36071,
+      "Mean_Defect_Rate": 0.01867255994615549,
+      "Maximum_Defects": 18,
+      "Record_Count": 74
+    },
+    {
+      "Machine_ID": "M05",
+      "Total_Output": 35055,
+      "Mean_Defect_Rate": 0.01714422631224408,
+      "Maximum_Defects": 16,
+      "Record_Count": 78
+    },
+    {
+      "Machine_ID": "M06",
+      "Total_Output": 38584,
+      "Mean_Defect_Rate": 0.01822354318298318,
+      "Maximum_Defects": 16,
+      "Record_Count": 83
+    },
+    {
+      "Machine_ID": "M07",
+      "Total_Output": 38359,
+      "Mean_Defect_Rate": 0.018459036957371812,
+      "Maximum_Defects": 17,
+      "Record_Count": 82
+    },
+    {
+      "Machine_ID": "M08",
+      "Total_Output": 40088,
+      "Mean_Defect_Rate": 0.018328756367767318,
+      "Maximum_Defects": 18,
+      "Record_Count": 83
+    },
+    {
+      "Machine_ID": "M09",
+      "Total_Output": 34704,
+      "Mean_Defect_Rate": 0.025303042095443318,
+      "Maximum_Defects": 21,
+      "Record_Count": 70
+    },
+    {
+      "Machine_ID": "M10",
+      "Total_Output": 33361,
+      "Mean_Defect_Rate": 0.02551526393572897,
+      "Maximum_Defects": 21,
+      "Record_Count": 73
+    },
+    {
+      "Machine_ID": "M11",
+      "Total_Output": 35749,
+      "Mean_Defect_Rate": 0.025920178790895847,
+      "Maximum_Defects": 21,
+      "Record_Count": 78
+    },
+    {
+      "Machine_ID": "M12",
+      "Total_Output": 36767,
+      "Mean_Defect_Rate": 0.025140075318074117,
+      "Maximum_Defects": 21,
+      "Record_Count": 77
+    },
+    {
+      "Machine_ID": "M13",
+      "Total_Output": 36309,
+      "Mean_Defect_Rate": 0.10042416825784917,
+      "Maximum_Defects": 66,
+      "Record_Count": 76
+    }
+  ],
+  "pivot": [
+    {
+      "Line": "A",
+      "Day": 0.015876856622561965,
+      "Night": 0.02173512758483801
+    },
+    {
+      "Line": "B",
+      "Day": 0.015763137997123294,
+      "Night": 0.02031160481730393
+    },
+    {
+      "Line": "C",
+      "Day": 0.03703636824769895,
+      "Night": 0.044257536785214525
+    }
+  ],
+  "pivot_matches_groupby": true,
+  "overall_mean_defect_rate": 0.02676772773633601,
+  "above_overall_mean_machines": [
+    "M13"
+  ],
+  "top5": [
+    {
+      "Machine_ID": "M13",
+      "Total_Output": 36309,
+      "Mean_Defect_Rate": 0.10042416825784917,
+      "Maximum_Defects": 66,
+      "Record_Count": 76
+    },
+    {
+      "Machine_ID": "M11",
+      "Total_Output": 35749,
+      "Mean_Defect_Rate": 0.025920178790895847,
+      "Maximum_Defects": 21,
+      "Record_Count": 78
+    },
+    {
+      "Machine_ID": "M10",
+      "Total_Output": 33361,
+      "Mean_Defect_Rate": 0.02551526393572897,
+      "Maximum_Defects": 21,
+      "Record_Count": 73
+    },
+    {
+      "Machine_ID": "M09",
+      "Total_Output": 34704,
+      "Mean_Defect_Rate": 0.025303042095443318,
+      "Maximum_Defects": 21,
+      "Record_Count": 70
+    },
+    {
+      "Machine_ID": "M12",
+      "Total_Output": 36767,
+      "Mean_Defect_Rate": 0.025140075318074117,
+      "Maximum_Defects": 21,
+      "Record_Count": 77
+    }
+  ],
+  "bottom5": [
+    {
+      "Machine_ID": "M04",
+      "Total_Output": 36071,
+      "Mean_Defect_Rate": 0.01867255994615549,
+      "Maximum_Defects": 18,
+      "Record_Count": 74
+    },
+    {
+      "Machine_ID": "M07",
+      "Total_Output": 38359,
+      "Mean_Defect_Rate": 0.018459036957371812,
+      "Maximum_Defects": 17,
+      "Record_Count": 82
+    },
+    {
+      "Machine_ID": "M08",
+      "Total_Output": 40088,
+      "Mean_Defect_Rate": 0.018328756367767318,
+      "Maximum_Defects": 18,
+      "Record_Count": 83
+    },
+    {
+      "Machine_ID": "M06",
+      "Total_Output": 38584,
+      "Mean_Defect_Rate": 0.01822354318298318,
+      "Maximum_Defects": 16,
+      "Record_Count": 83
+    },
+    {
+      "Machine_ID": "M05",
+      "Total_Output": 35055,
+      "Mean_Defect_Rate": 0.01714422631224408,
+      "Maximum_Defects": 16,
+      "Record_Count": 78
+    }
+  ],
+  "stable_demo": [
+    "B",
+    "A",
+    "C"
+  ],
+  "unmatched_effect": [
+    {
+      "Line": "A",
+      "Keep_All_Production": 0.018864574813322748,
+      "Drop_Unmatched": 0.018864574813322748,
+      "Difference_pp": 0.0
+    },
+    {
+      "Line": "B",
+      "Keep_All_Production": 0.018051323759422755,
+      "Drop_Unmatched": 0.018051323759422755,
+      "Difference_pp": 0.0
+    },
+    {
+      "Line": "C",
+      "Keep_All_Production": 0.04070487632825499,
+      "Drop_Unmatched": 0.02547445288312359,
+      "Difference_pp": 1.5230423445131396
+    }
+  ]
+}

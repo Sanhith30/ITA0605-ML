@@ -1,0 +1,49 @@
+HEAD
+Machine_ID       Date Line  Output_Units  Defects
+       M01 2026-03-01    A         480.0     12.0
+       M02 2026-03-01    A         455.0      9.0
+       M03 2026-03-01    B           NaN     15.0
+       M01 2026-03-02    A         492.0      NaN
+       M02 2026-03-02    A         455.0      9.0
+
+INFO
+<class 'pandas.core.frame.DataFrame'>
+RangeIndex: 7 entries, 0 to 6
+Data columns (total 5 columns):
+ #   Column        Non-Null Count  Dtype         
+---  ------        --------------  -----         
+ 0   Machine_ID    7 non-null      object        
+ 1   Date          7 non-null      datetime64[ns]
+ 2   Line          7 non-null      object        
+ 3   Output_Units  6 non-null      float64       
+ 4   Defects       6 non-null      float64       
+dtypes: datetime64[ns](1), float64(2), object(2)
+memory usage: 412.0+ bytes
+
+DTYPES
+Machine_ID              object
+Date            datetime64[ns]
+Line                    object
+Output_Units           float64
+Defects                float64
+SHAPE (7, 5)
+NULL COUNTS
+Machine_ID      0
+Date            0
+Line            0
+Output_Units    1
+Defects         1
+
+DESCRIBE
+       Machine_ID                           Date Line  Output_Units    Defects
+count           7                              7    7      6.000000   6.000000
+unique          3                            NaN    3           NaN        NaN
+top           M02                            NaN    A           NaN        NaN
+freq            3                            NaN    5           NaN        NaN
+mean          NaN  2026-03-01 13:42:51.428571392  NaN    474.500000  11.333333
+min           NaN            2026-03-01 00:00:00  NaN    455.000000   9.000000
+25%           NaN            2026-03-01 00:00:00  NaN    455.000000   9.000000
+50%           NaN            2026-03-02 00:00:00  NaN    467.500000  10.500000
+75%           NaN            2026-03-02 00:00:00  NaN    489.000000  13.500000
+max           NaN            2026-03-02 00:00:00  NaN    510.000000  15.000000
+std           NaN                            NaN  NaN     23.398718   2.732520

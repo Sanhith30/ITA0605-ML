@@ -1,0 +1,26 @@
+Q5 GENERATED 7 PLOTS:
+ Q5_axis_before_after.png
+ Q5_daily_line_output.png
+ Q5_defect_rate_histogram.png
+ Q5_four_panel_review.png
+ Q5_machine_rate_bar.png
+ Q5_output_defects_scatter.png
+ Q5_shift_boxplot.png
+Daily index length: 61 lines ['A', 'B', 'C']
+Machine average defect percentages:
+ Machine_ID
+M13    10.042417
+M11     2.592018
+M10     2.551526
+M09     2.530304
+M12     2.514008
+M03     1.924122
+M01     1.882843
+M02     1.870851
+M04     1.867256
+M07     1.845904
+M08     1.832876
+M06     1.822354
+M05     1.714423
+Trend slope/intercept/correlation: 0.0278161752614917 -0.49750476130719345 0.09919063995600447
+Line rates % used for misleading vs corrected chart: {'A': 1.8864574813322748, 'B': 1.8051323759422755, 'C': 4.070487632825499}

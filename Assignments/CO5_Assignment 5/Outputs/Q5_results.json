@@ -1,0 +1,44 @@
+{
+  "seed": 20260503,
+  "figures": [
+    "Q5_axis_before_after.png",
+    "Q5_daily_line_output.png",
+    "Q5_defect_rate_histogram.png",
+    "Q5_four_panel_review.png",
+    "Q5_machine_rate_bar.png",
+    "Q5_output_defects_scatter.png",
+    "Q5_shift_boxplot.png"
+  ],
+  "plotted_lines": [
+    "A",
+    "B",
+    "C"
+  ],
+  "daily_days": 61,
+  "histogram_bins": 25,
+  "machine_mean_rates_percent": {
+    "M13": 10.042416825784917,
+    "M11": 2.592017879089585,
+    "M10": 2.551526393572897,
+    "M09": 2.5303042095443318,
+    "M12": 2.5140075318074118,
+    "M03": 1.9241221042166534,
+    "M01": 1.882842567483691,
+    "M02": 1.8708510442185244,
+    "M04": 1.867255994615549,
+    "M07": 1.8459036957371813,
+    "M08": 1.8328756367767318,
+    "M06": 1.822354318298318,
+    "M05": 1.714422631224408
+  },
+  "scatter_slope": 0.0278161752614917,
+  "scatter_intercept": -0.49750476130719345,
+  "pearson_r": 0.09919063995600447,
+  "mean_rate_by_line_percent": {
+    "A": 1.8864574813322748,
+    "B": 1.8051323759422755,
+    "C": 4.070487632825499
+  },
+  "misleading_axis": "Truncated y-axis exaggerates absolute differences between mean line defect rates",
+  "corrected_axis": "Same data redrawn with y=0 baseline"
+}

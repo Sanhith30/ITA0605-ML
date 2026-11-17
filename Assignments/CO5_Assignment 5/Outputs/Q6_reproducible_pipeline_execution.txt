@@ -1,0 +1,19 @@
+Q6 SAME INPUT, TWO RUNS EXACTLY IDENTICAL: True
+ORIGINAL
+ Line  Total_Output  Mean_Defect_Rate  Record_Count
+   A        142099          0.018865           300
+   B        152086          0.018051           326
+   C        176890          0.040705           374
+CHANGED INPUT LINE EFFECT
+       Total_Output  Mean_Defect_Rate
+Line                                
+A               50         -0.000006
+DELIBERATE CHECK FAILURES: {'missing_column': "Input is missing required columns: ['Defects']", 'conflicting_production_key': 'Duplicate production keys after cleaning: 1', 'duplicate_merge_key': 'Machine_Info has duplicate Machine_ID keys; merge would multiply rows'}
+BENCHMARK 100,000 ROWS:
+                      time_ms  peak_allocated_bytes  output_nbytes
+Python_loop       118.027501             4006004.0       800000.0
+DataFrame_apply  1846.572279            41844430.0       800000.0
+Vectorised          0.732901              932992.0       800000.0
+MEMORY BEFORE AFTER 18701532 2201836 SAVING % 88.22644048626604
+DTYPES ORIGINAL {'Machine_ID': 'object', 'Date': 'datetime64[ns]', 'Shift': 'object', 'Line': 'object', 'Output_Units': 'int64', 'Defects': 'int64', 'Defect_Rate': 'float64'}
+DTYPES OPTIMISED {'Machine_ID': 'category', 'Date': 'datetime64[ns]', 'Shift': 'category', 'Line': 'category', 'Output_Units': 'int16', 'Defects': 'int8', 'Defect_Rate': 'float64'}
