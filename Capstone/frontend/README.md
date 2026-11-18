@@ -1,16 +1,13 @@
-# React + Vite
+# PhishShield dashboard
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+React 19 and Vite frontend for the phishing-detection dashboard. It provides the interactive risk view, analytics, extension guidance, privacy/terms pages, and supporting UI components.
 
-Currently, two official plugins are available:
+## Commands
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- `npm install`: install frontend dependencies.
+- `npm run dev`: start the development server.
+- `npm run build`: create a production build.
+- `npm run lint`: run Oxlint.
+- `npm run preview`: preview the production build.
 
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the Oxlint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+The frontend container is defined by `Dockerfile`; Vite configuration is in `vite.config.js`.
